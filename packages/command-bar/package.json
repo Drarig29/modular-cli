@@ -1,4 +1,10 @@
 {
   "name": "@drarig29/modular-cli.bar",
-  "main": "index.js"
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "esbuild --platform=node --bundle index.js --minify --outdir=dist"
+  },
+  "devDependencies": {
+    "esbuild": "^0.20.1"
+  }
 }
