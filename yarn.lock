@@ -4,8 +4,20 @@
 __metadata:
   version: 6
 
-"modular-cli@workspace:.":
+"@drarig29/modular-cli.bar@workspace:packages/command-bar":
   version: 0.0.0-use.local
-  resolution: "modular-cli@workspace:."
+  resolution: "@drarig29/modular-cli.bar@workspace:packages/command-bar"
+  languageName: unknown
+  linkType: soft
+
+"@drarig29/modular-cli.foo@workspace:packages/command-foo":
+  version: 0.0.0-use.local
+  resolution: "@drarig29/modular-cli.foo@workspace:packages/command-foo"
+  languageName: unknown
+  linkType: soft
+
+"@drarig29/modular-cli@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "@drarig29/modular-cli@workspace:."
   languageName: unknown
   linkType: soft

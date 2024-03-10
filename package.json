@@ -1,4 +1,7 @@
 {
-  "name": "modular-cli",
-  "packageManager": "yarn@3.4.1"
+  "name": "@drarig29/modular-cli",
+  "packageManager": "yarn@3.4.1",
+  "workspaces": [
+    "packages/*"
+  ]
 }
