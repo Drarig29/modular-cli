@@ -1,11 +1,8 @@
 {
-  "name": "@drarig29/modular-cli.heavy",
+  "name": "@drarig29/modular-cli.plugin-foo",
   "main": "dist/index.js",
   "scripts": {
     "build": "esbuild --platform=node --bundle index.js --minify --outdir=dist"
-  },
-  "dependencies": {
-    "@aws-sdk/client-s3": "^3.529.1"
   },
   "devDependencies": {
     "esbuild": "^0.20.1"

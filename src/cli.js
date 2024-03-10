@@ -6,7 +6,7 @@ async function main() {
     process.exit(1)
   }
 
-  const { execute } = await import(`@drarig29/modular-cli.${command}`)
+  const { execute } = await import(`@drarig29/modular-cli.plugin-${command}`)
   execute()
 }
 

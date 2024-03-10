@@ -705,25 +705,25 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@drarig29/modular-cli.bar@workspace:packages/command-bar":
+"@drarig29/modular-cli.plugin-bar@workspace:packages/plugin-bar":
   version: 0.0.0-use.local
-  resolution: "@drarig29/modular-cli.bar@workspace:packages/command-bar"
+  resolution: "@drarig29/modular-cli.plugin-bar@workspace:packages/plugin-bar"
   dependencies:
     esbuild: ^0.20.1
   languageName: unknown
   linkType: soft
 
-"@drarig29/modular-cli.foo@workspace:packages/command-foo":
+"@drarig29/modular-cli.plugin-foo@workspace:packages/plugin-foo":
   version: 0.0.0-use.local
-  resolution: "@drarig29/modular-cli.foo@workspace:packages/command-foo"
+  resolution: "@drarig29/modular-cli.plugin-foo@workspace:packages/plugin-foo"
   dependencies:
     esbuild: ^0.20.1
   languageName: unknown
   linkType: soft
 
-"@drarig29/modular-cli.heavy@workspace:packages/command-heavy":
+"@drarig29/modular-cli.plugin-heavy@workspace:packages/plugin-heavy":
   version: 0.0.0-use.local
-  resolution: "@drarig29/modular-cli.heavy@workspace:packages/command-heavy"
+  resolution: "@drarig29/modular-cli.plugin-heavy@workspace:packages/plugin-heavy"
   dependencies:
     "@aws-sdk/client-s3": ^3.529.1
     esbuild: ^0.20.1

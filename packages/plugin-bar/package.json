@@ -1,5 +1,5 @@
 {
-  "name": "@drarig29/modular-cli.bar",
+  "name": "@drarig29/modular-cli.plugin-bar",
   "main": "dist/index.js",
   "scripts": {
     "build": "esbuild --platform=node --bundle index.js --minify --outdir=dist"
