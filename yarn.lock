@@ -705,6 +705,14 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@drarig29/modular-cli.core@workspace:packages/core":
+  version: 0.0.0-use.local
+  resolution: "@drarig29/modular-cli.core@workspace:packages/core"
+  dependencies:
+    esbuild: ^0.20.1
+  languageName: unknown
+  linkType: soft
+
 "@drarig29/modular-cli.plugin-bar@workspace:packages/plugin-bar":
   version: 0.0.0-use.local
   resolution: "@drarig29/modular-cli.plugin-bar@workspace:packages/plugin-bar"

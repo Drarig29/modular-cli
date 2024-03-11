@@ -1,0 +1,10 @@
+{
+  "name": "@drarig29/modular-cli.core",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "esbuild --platform=node --bundle index.js --minify --outdir=dist"
+  },
+  "devDependencies": {
+    "esbuild": "^0.20.1"
+  }
+}
