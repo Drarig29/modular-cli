@@ -1,6 +1,9 @@
 const fs = require("node:fs");
 const fsp = require("node:fs/promises");
 const path = require("node:path");
+const { createRequire } = require("node:module");
+
+const requirePlugin = createRequire(__filename);
 
 const [command] = process.argv.slice(2);
 
@@ -51,7 +54,7 @@ async function main() {
     await fsp.writeFile(localFileName, content);
 
     console.log(`Executing plugin ${command}...`);
-    const { execute } = await import(localFileName);
+    const { execute } = requirePlugin(localFileName);
     execute();
   }
 }
