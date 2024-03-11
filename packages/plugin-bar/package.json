@@ -1,6 +1,6 @@
 {
   "name": "@drarig29/modular-cli.plugin-bar",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "main": "index.js",
   "scripts": {
     "build": "esbuild --platform=node --bundle index.js --minify --outdir=dist"
