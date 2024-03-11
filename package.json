@@ -2,7 +2,7 @@
   "name": "@drarig29/modular-cli",
   "version": "0.0.3",
   "main": "src/index.js",
-  "bin": "src/cli.js",
+  "bin": "bin/index.js",
   "files": [
     "src"
   ],
