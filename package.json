@@ -3,6 +3,9 @@
   "version": "0.0.2",
   "main": "src/index.js",
   "bin": "src/cli.js",
+  "files": [
+    "src"
+  ],
   "packageManager": "yarn@3.4.1",
   "workspaces": [
     "packages/*"
