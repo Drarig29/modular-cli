@@ -1,13 +1,14 @@
 const fs = require("node:fs");
 const fsp = require("node:fs/promises");
 const path = require("node:path");
+const debug = require("debug")("cli");
 const { createRequire } = require("node:module");
 
 const requirePlugin = createRequire(__filename);
 
 const [command] = process.argv.slice(2);
 
-// Example for Yarn: https://github.com/yarnpkg/berry/raw/master/packages/plugin-workspace-tools/bin/%40yarnpkg/plugin-workspace-tools.js
+// Example for Yarn: https://github.com/yarnpkg/berry/raw/master/packages/plugin-workspace-tools/bin/@yarnpkg/plugin-workspace-tools.js
 
 const PLUGIN_BASE_URL = `https://github.com/Drarig29/modular-cli/raw/{tag}/packages/plugin-{name}/dist/index.js`;
 const BASE_TAG = `@drarig29/modular-cli/v{version}`;
@@ -21,6 +22,7 @@ async function main() {
 
   try {
     const { execute } = await import(`@drarig29/modular-cli.plugin-${command}`);
+    debug("Executing installed plugin...");
     execute();
   } catch {
     const tag = BASE_TAG.replace("{version}", VERSION);
@@ -32,28 +34,27 @@ async function main() {
     const localFileName = `/tmp/${tag}/plugin-${command}.js`;
 
     if (fs.existsSync(localFileName)) {
-      console.log(`Executing plugin ${command}...`);
+      debug(`Found existing downloaded plugin`);
       const { execute } = await import(localFileName);
+      debug(`Executing downloaded plugin ${command}...`);
       execute();
       return;
     }
 
-    console.log(`Fetching plugin from ${pluginUrl}`);
-
+    debug(`Fetching plugin from ${pluginUrl}`);
     const response = await fetch(pluginUrl);
     if (response.status !== 200) {
-      console.error("Plugin not found");
+      console.error(`Could not fetch plugin: ${response.status}`);
       return;
     }
 
     const content = await response.text();
 
-    console.log(`Saving plugin to ${localFileName}`);
-
+    debug(`Saving plugin to ${localFileName}`);
     await fsp.mkdir(path.dirname(localFileName), { recursive: true });
     await fsp.writeFile(localFileName, content);
 
-    console.log(`Executing plugin ${command}...`);
+    debug(`Executing downloaded plugin ${command}...`);
     const { execute } = requirePlugin(localFileName);
     execute();
   }
