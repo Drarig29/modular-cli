@@ -1,6 +1,7 @@
 {
   "name": "@drarig29/modular-cli.plugin-foo",
-  "main": "dist/index.js",
+  "version": "0.0.4",
+  "main": "index.js",
   "scripts": {
     "build": "esbuild --platform=node --bundle index.js --minify --outdir=dist"
   },

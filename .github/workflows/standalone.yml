@@ -1,0 +1,24 @@
+name: Run standalone executable
+
+on: [push]
+
+jobs:
+  standalone-executable:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "21.0.0"
+      - name: Generate blob
+        run: node --experimental-sea-config sea-config.json
+      - name: Copy Node.js executable
+        run: cp $(command -v node) ./modular-cli
+      - name: Inject blob into executable
+        run: npx postject ./modular-cli NODE_SEA_BLOB sea-prep.blob --sentinel-fuse NODE_SEA_FUSE_fce680ab2cc467b6e072b8b5df1996b2
+      - name: Test the executable
+        run: |
+          ./modular-cli foo
+          ./modular-cli bar
+          ./modular-cli heavy

@@ -6,3 +6,6 @@
 !.yarn/versions
 
 node_modules
+dist
+*.blob
+*.tgz
