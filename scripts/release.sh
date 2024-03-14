@@ -1,3 +1,5 @@
+set -e
+
 # Replace version in all `package.json`
 sed -i -e "s/\"version\": \".*\"/\"version\": \"$1\"/" package.json packages/*/package.json
 sed -i -e "s/const VERSION = \".*\"/const VERSION = \"$1\"/" src/cli.js
