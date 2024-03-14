@@ -23,3 +23,6 @@ git commit -m "Commit dist files"
 git tag @drarig29/modular-cli/v$1
 git push
 git push --tags
+
+# Go back to main
+git checkout main
