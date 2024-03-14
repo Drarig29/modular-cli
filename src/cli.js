@@ -8,7 +8,7 @@ const requirePlugin = createRequire(__filename);
 
 const [command] = process.argv.slice(2);
 
-// Example for Yarn: https://github.com/yarnpkg/berry/raw/master/packages/plugin-workspace-tools/bin/@yarnpkg/plugin-workspace-tools.js
+// Example for Yarn: https://github.com/yarnpkg/berry/raw/@yarnpkg/cli/3.4.1/packages/plugin-workspace-tools/bin/@yarnpkg/plugin-workspace-tools.js
 
 const PLUGIN_BASE_URL = `https://github.com/Drarig29/modular-cli/raw/{tag}/packages/plugin-{name}/dist/index.js`;
 const BASE_TAG = `@drarig29/modular-cli/v{version}`;

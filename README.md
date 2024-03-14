@@ -28,3 +28,12 @@ Supported ways to use it:
 - Without Node.js
   - [x] A standalone executable (roughly the size of Node.js itself) must be downloaded with `curl`
     - Downloads the required plugin, and saves it for future executions.
+
+Note: `.modular-cli` is called a portable path.
+
+References:
+- https://github.com/yarnpkg/berry/blob/daa574791b3b2df01e76c1fdfd9c975050a0fb9d/packages/yarnpkg-builder/sources/commands/build/plugin.ts
+- https://github.com/yarnpkg/berry/blob/daa574791b3b2df01e76c1fdfd9c975050a0fb9d/packages/yarnpkg-builder/sources/commands/new/plugin.ts#L6
+- https://github.com/yarnpkg/berry/blob/daa574791b3b2df01e76c1fdfd9c975050a0fb9d/packages/plugin-essentials/sources/commands/plugin/list.ts#L6
+- https://raw.githubusercontent.com/yarnpkg/berry/master/plugins.yml
+- https://github.com/yarnpkg/berry/blob/daa574791b3b2df01e76c1fdfd9c975050a0fb9d/packages/plugin-essentials/sources/commands/plugin/import.ts#L123
