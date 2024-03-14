@@ -1,1 +1,1 @@
-function e(){console.log('Executing command "bar"...')}module.exports={execute:e};
+var o=(r,e)=>()=>(e||r((e={exports:{}}).exports,e),e.exports);var i=o((a,t)=>{function s(){return process.env.CI_COMMIT_SHA??"local"}t.exports={getCiCommitSha:s}});var n=o((x,c)=>{var m=i();c.exports={ciUtils:m}});var{ciUtils:u}=n();function l(){console.log(`Executing command "bar" on commit ${u.getCiCommitSha()}...`)}module.exports={execute:l};
