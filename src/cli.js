@@ -12,7 +12,7 @@ const [command] = process.argv.slice(2);
 
 const PLUGIN_BASE_URL = `https://github.com/Drarig29/modular-cli/raw/{tag}/packages/plugin-{name}/dist/index.js`;
 const BASE_TAG = `@drarig29/modular-cli/v{version}`;
-const VERSION = "0.0.1";
+const VERSION = "0.0.4";
 
 async function main() {
   if (!command) {
