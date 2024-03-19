@@ -5,7 +5,7 @@ sed -i -e "s/\"version\": \".*\"/\"version\": \"$1\"/" package.json packages/*/p
 sed -i -e "s/\/raw\/@drarig29\/modular-cli\/v[0-9]\+\.[0-9]\+\.[0-9]\+/\/raw\/@drarig29\/modular-cli\/v$1/" src/plugins.json
 
 git add .
-git commit -m "$1"
+git commit -m "$1" || true
 git push
 
 yarn workspaces list --json | jq -r '.location' | while read -r dir; do
