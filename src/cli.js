@@ -11,6 +11,9 @@ const requirePlugin = createRequire(__filename);
 
 const [command] = process.argv.slice(2);
 
+// TODO: pass `clipanion`, `typanion` and `chalk` to every plugin
+// TODO: make the plugin factory (each plugin exports a function which takes some injected dependencies as arguments)
+
 async function main() {
   if (!command) {
     console.log("No command provided");
