@@ -11,6 +11,8 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: "21.0.0"
+      - name: Install dependencies
+        run: npm install
       - name: Bundle into a single file
         run: npx esbuild --platform=node --bundle src/cli.js --minify --outdir=dist
       - name: Generate blob
