@@ -2,17 +2,13 @@ const fs = require("node:fs");
 const fsp = require("node:fs/promises");
 const path = require("node:path");
 const debug = require("debug")("cli");
-const { createRequire } = require("node:module");
+const PLUGINS = require("./plugins.json");
+
+const { createRequire } = require("node:module"); // Required for SEA.
 
 const requirePlugin = createRequire(__filename);
 
 const [command] = process.argv.slice(2);
-
-// Example for Yarn: https://github.com/yarnpkg/berry/raw/master/packages/plugin-workspace-tools/bin/@yarnpkg/plugin-workspace-tools.js
-
-const PLUGIN_BASE_URL = `https://github.com/Drarig29/modular-cli/raw/{tag}/packages/plugin-{name}/dist/index.js`;
-const BASE_TAG = `@drarig29/modular-cli/v{version}`;
-const VERSION = "0.0.5";
 
 async function main() {
   if (!command) {
@@ -25,11 +21,7 @@ async function main() {
     debug("Executing installed plugin...");
     execute();
   } catch {
-    const tag = BASE_TAG.replace("{version}", VERSION);
-    const pluginUrl = PLUGIN_BASE_URL.replace("{tag}", tag).replace(
-      "{name}",
-      command
-    );
+    const pluginUrl = PLUGINS[`plugin-${command}`].url;
 
     const localFileName = `/tmp/${tag}/plugin-${command}.js`;
 
@@ -40,6 +32,12 @@ async function main() {
       execute();
       return;
     }
+
+    // TODO: use checksum to verify plugin integrity after download
+    // TODO: always verify the checksum before running the plugin from a well-known location (`/tmp` or portable path)
+    // TODO: for Node.js SEA, the checksums can be baked into the executable - but outside of that, we need to fetch the checksum from a trusted source, e.g. GitHub
+    // TODO: make sure this isn't be vulnerable to something like https://github.com/vercel/pkg/security/advisories/GHSA-22r3-9w55-cj54
+    // Note: using SHA512 as it's more secure. And no need for GPG as GitHub is on HTTPS.
 
     debug(`Fetching plugin from ${pluginUrl}`);
     const response = await fetch(pluginUrl);

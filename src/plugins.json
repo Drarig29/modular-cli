@@ -1,0 +1,17 @@
+{
+  "plugin-foo": {
+    "url": "https://github.com/Drarig29/modular-cli/raw/@drarig29/modular-cli/v0.0.6/packages/plugin-foo/dist/index.js",
+    "description": "Some description for plugin-foo",
+    "checksum": "893c88156aa5d84eac804790672f72a292535eddd7e90721d364102feaeffc5d55a38ad2c9878177ffb094ce2c8c28dc0406f4932acc79f7ad2fc6937ce56a40"
+  },
+  "plugin-bar": {
+    "url": "https://github.com/Drarig29/modular-cli/raw/@drarig29/modular-cli/v0.0.6/packages/plugin-bar/dist/index.js",
+    "description": "Some description for plugin-bar",
+    "checksum": "e0e6d6d90f68024712f1639f52cee637bb12d7f35c5927b8e562a0a7fe5741d5eb892741e7bcc7741956a6eda90fdf599fa900e1c6b5546130478d98b8d3bb96"
+  },
+  "plugin-heavy": {
+    "url": "https://github.com/Drarig29/modular-cli/raw/@drarig29/modular-cli/v0.0.6/packages/plugin-heavy/dist/index.js",
+    "description": "Some description for plugin-heavy",
+    "checksum": "dcb2a07eae49729fee5cf8bceef704fa43b4417c30c01fd3af3a99e148892337c627afa2a280ac2318d1787458300cc6dd2276fa8b220ca26fd314f1d86cef03"
+  }
+}
