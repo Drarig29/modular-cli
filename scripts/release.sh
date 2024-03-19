@@ -10,7 +10,7 @@ git push
 
 yarn workspaces list --json | jq -r '.location' | while read -r dir; do
   cd $(git rev-parse --show-toplevel)/$dir
-  npm publish --access public
+  npm publish --access public || true
 done
 
 git checkout dist
