@@ -2,6 +2,7 @@ const fs = require("node:fs");
 const fsp = require("node:fs/promises");
 const path = require("node:path");
 const debug = require("debug")("cli");
+const PKG = require("../package.json");
 const PLUGINS = require("./plugins.json");
 
 const { createRequire } = require("node:module"); // Required for SEA.
@@ -23,7 +24,7 @@ async function main() {
   } catch {
     const pluginUrl = PLUGINS[`plugin-${command}`].url;
 
-    const localFileName = `/tmp/${tag}/plugin-${command}.js`;
+    const localFileName = `/tmp/@drarig29/modular-cli/${PKG.version}/plugin-${command}.js`;
 
     if (fs.existsSync(localFileName)) {
       debug(`Found existing downloaded plugin`);
@@ -43,7 +44,7 @@ async function main() {
     const response = await fetch(pluginUrl);
     if (response.status !== 200) {
       console.error(`Could not fetch plugin: ${response.status}`);
-      return;
+      process.exit(1);
     }
 
     const content = await response.text();
