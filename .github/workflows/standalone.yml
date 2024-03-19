@@ -11,6 +11,8 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: "21.0.0"
+      - name: Bundle into a single file
+        run: npx esbuild --platform=node --bundle src/cli.js --minify --outdir=dist
       - name: Generate blob
         run: node --experimental-sea-config sea-config.json
       - name: Copy Node.js executable
