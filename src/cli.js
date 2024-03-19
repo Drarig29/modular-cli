@@ -44,7 +44,7 @@ async function main() {
     const response = await fetch(pluginUrl);
     if (response.status !== 200) {
       console.error(`Could not fetch plugin: ${response.status}`);
-      return;
+      process.exit(1);
     }
 
     const content = await response.text();
