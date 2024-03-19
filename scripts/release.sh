@@ -4,6 +4,10 @@ set -e
 sed -i -e "s/\"version\": \".*\"/\"version\": \"$1\"/" package.json packages/*/package.json
 sed -i -e "s/\/raw\/@drarig29\/modular-cli\/v[0-9]\+\.[0-9]\+\.[0-9]\+/\/raw\/@drarig29\/modular-cli\/v$1/" src/plugins.json
 
+# Build dist files
+yarn build
+
+# Update checksums
 jq -r 'keys[]' src/plugins.json | while read -r plugin; do
   checksum=$(sha512sum packages/$plugin/dist/index.js | cut -d ' ' -f 1)
   jq ".[\"$plugin\"].checksum = \"$checksum\"" src/plugins.json > src/plugins.json.tmp
@@ -22,11 +26,8 @@ done
 git checkout dist
 git merge main
 
-# Build dist files
-yarn build
-
 git add .
-git commit -m "Commit dist files"
+git commit -m "Commit dist files" # Not in `.gitignore` on this branch
 git tag @drarig29/modular-cli/v$1
 git push
 git push --tags
