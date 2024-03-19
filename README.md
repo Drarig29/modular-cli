@@ -1,7 +1,10 @@
 # modular-cli
 
 - The core of the CLI should be minimal.
-- Nothing else than commands should exported from each plugin. If `modular-cli` has to be used as a library, all exports should from here, and their imports should be minimal in size.
+<!--
+XXX: not sure about this actually.
+- Nothing else than commands should be exported from each plugin.
+- Anything exported from `modular-cli` should be directly available, not through plugins. A plugin should never be installed and imported as a library (e.g. `import {someUtil} from '@drarig29/modular-cli.plugin-heavy'`) -->
 
 Running `modular-cli <command> <anything>` requires a plugin named `@drarig29/modular-cli.plugin-<command>`
 
@@ -40,3 +43,4 @@ References:
 - https://github.com/yarnpkg/berry/blob/master/packages/docusaurus/docs/advanced/04-technical/plugin-tutorial.md
 - https://github.com/yarnpkg/berry/blob/daa574791b3b2df01e76c1fdfd9c975050a0fb9d/packages/yarnpkg-cli/sources/tools/getDynamicLibs.ts#L19-L22
 - https://github.com/yarnpkg/berry/blob/daa574791b3b2df01e76c1fdfd9c975050a0fb9d/packages/yarnpkg-core/sources/Configuration.ts#L1110-L1379
+- https://github.com/yarnpkg/berry/issues/1678#issuecomment-669873299
