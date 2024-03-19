@@ -27,7 +27,7 @@ git checkout dist
 git merge main
 
 git add .
-git commit -m "Commit dist files" # Not in `.gitignore` on this branch
+git commit -m "Commit dist files" || true # Not in `.gitignore` on this branch
 git tag @drarig29/modular-cli/v$1
 git push
 git push --tags
