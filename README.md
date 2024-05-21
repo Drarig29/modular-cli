@@ -40,7 +40,7 @@ References:
 - https://github.com/yarnpkg/berry/blob/daa574791b3b2df01e76c1fdfd9c975050a0fb9d/packages/plugin-essentials/sources/commands/plugin/list.ts#L6
 - https://raw.githubusercontent.com/yarnpkg/berry/master/plugins.yml
 - https://github.com/yarnpkg/berry/blob/daa574791b3b2df01e76c1fdfd9c975050a0fb9d/packages/plugin-essentials/sources/commands/plugin/import.ts#L123
-- https://github.com/yarnpkg/berry/blob/master/packages/docusaurus/docs/advanced/04-technical/plugin-tutorial.md
+- https://github.com/yarnpkg/berry/blob/master/packages/docusaurus/docs/advanced/04-technical/plugin-tutorial.mdx
 - https://github.com/yarnpkg/berry/blob/daa574791b3b2df01e76c1fdfd9c975050a0fb9d/packages/yarnpkg-cli/sources/tools/getDynamicLibs.ts#L19-L22
 - https://github.com/yarnpkg/berry/blob/daa574791b3b2df01e76c1fdfd9c975050a0fb9d/packages/yarnpkg-core/sources/Configuration.ts#L1110-L1379
 - https://github.com/yarnpkg/berry/issues/1678#issuecomment-669873299
